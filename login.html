@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./src/input.css">
+    <link rel="stylesheet" href="./src/output.css">
+    <script type="module" src="./js/login.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>LOGIN</title>
+</head>
+<body class="bg-blue-400 h-screen">
+ <header class="border-solid border-2 border-blue-800">
+            <div class="bg-blue-500 h-20"> 
+                <img class="h-20 w-30 pl-9" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/2560px-Disney%2B_logo.svg.png"></img>
+            </div>
+        </header>
+
+        <main>
+            <h1 class="text-blue-800 text-6xl text-center text-nowrap font-semibold font-sans mt-8">ACESSAR CONTA</h1>
+            <form class="flex flex-col items-center mt-24" id="loginForm">
+                <input type="email" id="email" name="email"
+                placeholder="Seu e-mail aqui"
+                class="w-1/5 mb-6 h-12 px-12 py-2 border border-blue-600 rounded-2xl bg-blue-300 focus:outline-none" required>
+                
+                <input type="password" id="password" name="password"
+                placeholder="Sua senha"
+                class="w-1/5 h-12 px-12 py-2 border border-blue-600 bg-blue-300 rounded-2xl flex justify-center" required>
+                
+                <div class="flex items-center justify-center mt-16">
+                        <form action="./index.html" class="text-[#fafafa] " id="form">
+                        <button type="submit" class="text-blue-800 font-semibold bg-white border rounded-lg text-3xl px-20 py-5 me-2 flex flex-row items-center justify-center">ENTRAR</button>
+                    </div>
+                </form>
+            </main>
+    
+</body>
+</html>

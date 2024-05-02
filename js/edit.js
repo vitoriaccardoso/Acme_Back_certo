@@ -11,7 +11,7 @@ async function dadosFilme(){
         
         const infoFilme = await getFilmesId(id)
         // console.log(infoFilme.sinopse)
-        
+
         const nome = document.getElementById('nome')
         
         const sinopse = document.getElementById('sinopse')

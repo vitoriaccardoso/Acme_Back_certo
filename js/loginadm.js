@@ -1,39 +1,19 @@
-'use strict'
+'use strict';
 
-// const form = document.getElementById('form')
-const icone = document.getElementById('icone')
+const loginForm = document.getElementById("loginForm");
 
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita o envio do formulário padrão
 
-// function login(){
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-//     if(email == 'adm@gmail.com' && senha == 'Amd123@'){
-//         window.location.href = './dashboard.html'
-//     }else{
-//         console.log('Porfavor colocar as informações corretas!!')
-//     }
-// }
-
-const form = document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault()
-
-    const email = document.getElementById('email').value
-    const senha = document.getElementById('senha').value
-
-    if (email === 'adm@gmail.com' && senha === 'Adm123@') {
-        window.location.href = './dashboard.html'
+    // Verifica se o e-mail e a senha correspondem aos valores esperados
+    if (email.trim() === "vitoria@gmail.com" && password === "1234") {
+        alert("Login bem-sucedido!");
+        // Redireciona o usuário para a página home.html
+        window.location.href = "./dashbord.html";
     } else {
-        alert('Por favor, coloque as informações corretas!!')
+        alert("E-mail ou senha incorretos. Por favor, tente novamente.");
     }
-})
-
-
-
-icone.addEventListener('click', ()=>{
-    if (senha.type === 'password') {
-        senha.type = 'text';
-        icone.classList.replace('bx-lock', 'bx-lock-open')
-    } else {
-        senha.type = 'password';
-        icone.classList.replace('bx-lock-open', 'bx-lock')
-    }
-})
+});

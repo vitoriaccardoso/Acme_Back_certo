@@ -1,15 +1,15 @@
 'use strict'
 
-import {getFilmes, getFilmesId,postFilme, putFilme} from "./filmes.js"
+import {getFilmes, getFilmeId,postFilme, putFilme} from "./filmes.js"
 
 const indice = new URLSearchParams(window.location.search).get('id');
 
-const infoFilme = await getFilmesId(indice)
+const infoFilme = await getFilmeId(indice)
 console.log(infoFilme)
 
 function preencherCampos(filme){
     const titulo = document.getElementById('titulo')
-    titulo.textContent = filme.nome
+ 
     const poster = document.getElementById('poster')
     poster.src = filme.foto_capa
     const sinopse = document.getElementById('sinopse')

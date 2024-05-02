@@ -47,7 +47,7 @@ function criarCard (filme){
     titulo.classList.add('text-center')
     titulo.classList.add('mr-1')
     titulo.classList.add('w-64')
-    titulo.classList.add('border-b-4')
+    titulo.classList.add('border-b-10')
     titulo.classList.add('border-x-4')
     titulo.classList.add('border-[#fafafa]')
     const texto = document.createElement('p')
@@ -61,13 +61,13 @@ function criarCard (filme){
     capa.classList.add('w-64')
     capa.classList.add('border-t-4')
     capa.classList.add('border-x-4')
-    capa.classList.add('border-[#fafafa]')
+  
     const dataLancamento = document.createElement('p')
     dataLancamento.textContent = filme.data_lancamento
     card.append(capa, titulo)
     container.appendChild(card)
     card.addEventListener('click',()=> {
-        window.location.href='../sobre.html?id='+filme.id
+        window.location.href='../sobre.html?id='+filme.id_filme
     })
 }
 

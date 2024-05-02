@@ -8,35 +8,33 @@
     <link rel="stylesheet" href="./src/output.css">
     <script type="module" src="./js/loginadm.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Login</title>
+    <title>LOGIN</title>
 </head>
-<body class="bg-[#0c0a09] h-screen">
-
-    <header class="h-24 flex justify-center items-center p-12 bg-[#0c0a09] ">
-        <h1 class="text-[#fafafa] text-5xl">Entrar</h1>
-    </header>
-
-    <main class="h-5/6 flex items-center justify-center">
-        <form action="./index.html" class="text-[#fafafa]">
-            <div class="flex flex-col items-center ">
-            <h1 class="text-4xl">Bem vindo(a) adm</h1>
-            <div class="flex flex-col gap-5 pt-10">
-
-            <div class="flex items-center">
-                <input type="text" class="p-2 w-80  border-[#fafafa] rounded-l-full border-y-4 bg-[#0c0a09] border-l-4 outline-none text-2xl" id="email">
-                <i class='bx bx-envelope border-r-4 border-y-4 border-[#fafafa] p-2 rounded-r-full text-2xl pr-4'></i>
+<body class="bg-blue-400 h-screen">
+ <header class="border-solid border-2 border-blue-800">
+            <div class="bg-blue-500 h-20"> 
+                <img class="h-20 w-30 pl-9" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/2560px-Disney%2B_logo.svg.png"></img>
             </div>
+        </header>
 
-            <div class="flex items-center">
-                <input type="password" class="p-2 w-80  border-[#fafafa] rounded-l-full border-y-4 bg-[#0c0a09] border-l-4 outline-none text-2xl" id="senha" >
-                <i class='bx bx-lock border-r-4 border-y-4 border-[#fafafa] p-2 rounded-r-full text-2xl pr-4 cursor-pointer' id="icone" ></i>
-            </div>
-
-        </div>
-        <button class="flex items-center justify-center [#fafafa] " id="logar">LOGIN</button>
-        </div>
-        </form>
-    </main>
+        <main>
+            <h1 class="text-blue-800 text-6xl text-center text-nowrap font-semibold font-sans mt-8">LOGIN</h1>
+            <h1 class="text-blue-800 text-6xl text-center text-nowrap font-semibold font-sans mt-8">ADMINISTRADOR</h1>
+            <form class="flex flex-col items-center mt-24" id="loginForm">
+                <input type="email" id="email" name="email"
+                placeholder="Seu e-mail aqui"
+                class="w-1/5 mb-6 h-12 px-12 py-2 border border-blue-600 rounded-2xl bg-blue-300 focus:outline-none" required>
+                
+                <input type="password" id="password" name="password"
+                placeholder="Sua senha"
+                class="w-1/5 h-12 px-12 py-2 border border-blue-600 bg-blue-300 rounded-2xl flex justify-center" required>
+           
+                <div class="flex items-center justify-center mt-16">
+                    <form action="./dashbord.html" class="text-[#fafafa] " id="form">
+                    <button type="submit" class="text-blue-800 font-semibold bg-white border rounded-lg text-3xl px-20 py-5 me-2 flex flex-row items-center justify-center">ENTRAR</button>
+                </div>
+                </form>
+            </main>
     
 </body>
 </html>

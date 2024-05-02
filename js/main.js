@@ -81,16 +81,17 @@ async function preencherContainer(){
     })
 }
 
-// const input = document.getElementById('input')
-
-// input.addEventListener('keyup', async(nome)=>{
-//     if(input == nome){
-//         const nomeFilme = await selectNameFilmes()
-//          nomeFilme = preencherContainer()
-//     }
-// })
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteButton = document.getElementById('deleteButton');
+    deleteButton.addEventListener('click', async () => {
+        try {
+            await deleteFilme(id);
+            window.location.href = './dashboard.html';
+        } catch (error) {
+            console.error('Erro ao excluir filme:', error);
+        }
+    });
+});
 
 
 preencherContainer()

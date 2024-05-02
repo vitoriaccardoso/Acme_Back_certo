@@ -39,16 +39,19 @@ export async function putFilme(filme) {
     return response.ok;
 }
 
-export async function deleteFilme(id){
-    try{
-        await fetch(`http://localhost:8080/v2/acmeFilmes/filme/${id}`,{
-            method: 'DELETE'
-        })
-        console.log("Filme excluído com sucesso")
-    } catch (error){
-        console.error('Erro ao excluir filme: ',error);
+export async function deleteFilme(id) {
+    try {
+        const response = await fetch(`http://localhost:8080/v2/acmeFilmes/filme/${id}`, {
+            method: 'DELETE',
+        });
+        if (!response.ok) {
+            throw new Error('Erro ao excluir filme');
+        }
+    } catch (error) {
+        throw new Error(error.message);
     }
 }
+
 
 export async function selectNameFilmes(name) {
     const url = `http://localhost:8080/v2/acmefilmes/filmes?nome=${name}`;
@@ -56,3 +59,5 @@ export async function selectNameFilmes(name) {
     const data = await response.json();
     return data.filmes;
 }
+
+

@@ -11,6 +11,7 @@ async function dadosFilme(){
         
         const infoFilme = await getFilmesId(id)
         // console.log(infoFilme.sinopse)
+        const id = document.getElementById('id')
 
         const nome = document.getElementById('nome')
         
@@ -32,7 +33,7 @@ async function dadosFilme(){
         poster.src = infoFilme.foto_capa
         valor.value = infoFilme.valor_unitario
         lancamento.value = infoFilme.data_lancamento.slice(0,10)
-        // console.log(infoFilme.data_lancamento.slice(0,10))
+      
         relancamento.value = infoFilme.data_relancamento
 
     }else{
@@ -84,7 +85,6 @@ salvar.addEventListener('click', () => {
         
     
 });
-
 
 //
 

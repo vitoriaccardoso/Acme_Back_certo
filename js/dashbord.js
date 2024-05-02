@@ -29,9 +29,14 @@ function criarFilme(info){
     iconeEditar.addEventListener('click',()=>{
         window.location.href='../editar.html?id='+info.id
     })
-    iconeDeletar.addEventListener('click',()=>{
-        deleteFilme(info.id)
-        window.location.reload()
+    iconeDeletar.addEventListener('click', async () => {
+        try {
+            await deleteFilme(info.id);
+            filme.remove(); // Remove o filme da interface
+        } catch (error) {
+            console.error('Erro ao excluir filme:', error);
+            // Trate o erro conforme necessário
+        }
     })
 }
 

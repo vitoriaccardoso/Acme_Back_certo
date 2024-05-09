@@ -30,13 +30,8 @@ function criarFilme(info){
         window.location.href='../editar.html?id='+info.id
     })
     iconeDeletar.addEventListener('click', async () => {
-        try {
-            await deleteFilme(info.id);
-            filme.remove(); // Remove o filme da interface
-        } catch (error) {
-            console.error('Erro ao excluir filme:', error);
-            // Trate o erro conforme necessário
-        }
+      deleteFilme(info.id_filme)
+      window.location.reload()
     })
 }
 
@@ -48,4 +43,9 @@ add.addEventListener('click', ()=>{
 
 listaFilme.forEach(filme => {
     criarFilme(filme)
+});
+const iconeAdicionar = document.getElementById('iconeAdicionar');
+
+iconeAdicionar.addEventListener('click', () => {
+    window.location.href = '../html/pagina_de_adicionar_filme.html';
 });

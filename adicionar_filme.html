@@ -6,67 +6,56 @@
     <link rel="stylesheet" href="./src/input.css">
     <link rel="stylesheet" href="./src/output.css">
     <script type="module" src="../js/cadastro.js"></script>
-    <script type="module" src="./js/edit.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Editar filme</title>
+    <title>Adicionar filme</title>
 </head>
 <body class="h-screen bg-blue-400">
-
     <header class="h-24 flex justify-between items-center p-12 bg-blue-400 border-b-4 ">
-        <a href="./dashbord.html" class=" text-3xl">CADASTRAR FILME</a>
-        <ul class="flex gap-4">
-
-           
-        </ul>
+        <a href="./dashbord.html" class="text-3xl">CADASTRAR FILME</a>
+        <ul class="flex gap-4"></ul>
     </header>
 
     <main class="h-4/5">
-        <div class="flex w-full h-full justify-around items-center" id="container">
+        <form id="formAdicionarFilme" class="flex w-full h-full justify-around items-center">
             <div class="flex gap-5 flex-col" id="infoFilme">
-    
-                
                 <div class="flex items-center justify-center gap-2">
-                    <p class="text-blue-900 text-3xl" >Nome: </p>
-                    <input type="text" class="outline-none p-3 w-96 border-4 border-[#123ff6] bg-blue-400  text-2xl rounded-3xl" id="nome">
+                    <p class="text-blue-900 text-3xl">Nome: </p>
+                    <input type="text" class="outline-none p-3 w-96 border-4 border-[#123ff6] bg-blue-400 text-2xl rounded-3xl" id="titulo" name="titulo">
                 </div>
                 <div class="flex items-center gap-4">
-                    <p class="text-blue-900 text-3xl" >Sinopse:</p>
-                    <textarea name=""  cols="30" rows="5" class="w-96 outline-none border-4 border-[#123ff6] bg-blue-400  text-1xl rounded-3xl" id="sinopse"></textarea>
+                    <p class="text-blue-900 text-3xl">Sinopse:</p>
+                    <textarea name="sinopse" cols="30" rows="5" class="w-96 outline-none border-4 border-[#123ff6] bg-blue-400 text-1xl rounded-3xl" id="sinopse"></textarea>
                 </div>
                 <div class="flex items-center gap-4">
-                    <p class="text-blue-900 text-3xl" >Duração:</p>
-                    <input type="text" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400  text-2xl rounded-3xl" id="duracao">
+                    <p class="text-blue-900 text-3xl">Duração:</p>
+                    <input type="text" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400 text-2xl rounded-3xl" id="duracao" name="duracao">
                 </div>
                 <div class="flex items-center gap-2">
-                    <p class="text-blue-900 text-3xl" >Lançamento:</p>
-                    <input type="date" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400  text-2xl rounded-3xl" id="lancamento">
+                    <p class="text-blue-900 text-3xl">Lançamento:</p>
+                    <input type="date" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400 text-2xl rounded-3xl" id="lancamento" name="dataLancamento">
                 </div>
                 <div class="flex items-center gap-2">
-                    <p class="text-blue-900 text-3xl" >Relançamento:</p>
-                    <input type="date" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400  text-2xl rounded-3xl" id="relancamento">
+                    <p class="text-blue-900 text-3xl">Relançamento:</p>
+                    <input type="date" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400 text-2xl rounded-3xl" id="relancamento" name="dataRelancamento">
                 </div>
                 <div class="flex items-center gap-2">
-                    <p class="text-blue-900 text-3xl" >Valor:</p>
-                    <input type="text" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400 text-2xl rounded-3xl" id="valor">
+                    <p class="text-blue-900 text-3xl">Valor:</p>
+                    <input type="text" class="p-3 outline-none border-4 border-[#123ff6] bg-blue-400 text-2xl rounded-3xl" id="valor" name="valor">
                 </div>
             </div>
-            <div class="" id="capaFilme">
+            <div id="capaFilme">
                 <div class="posterFilme bg-[#7A7A7A] text-blue-500 h-fit w-fit flex flex-col items-center border-4 border-[#123ff6] rounded-lg">
                     <img id="poster" class="w-64">
-                    <input type="text" id="link" class="w-full outline-none bg-[#19191A] font-bold" placeholder="Link da imagem">
+                    <input type="text" id="link" class="w-full outline-none bg-[#19191A] font-bold" placeholder="Link da imagem" name="link">
                 </div>
-                <button class="p-3 border-4 text-blue-500 m-10  font-bold hover:bg-[#0022ff] hover:text-[#19191A] transition ease-in-out block rounded-lg" id="salvar">SALVAR ALTERAÇÕES</button>
+                <button type="submit" class="p-3 border-4 text-blue-500 m-10 font-bold hover:bg-[#0022ff] hover:text-[#19191A] transition ease-in-out block rounded-lg" id="cadastrar">SALVAR ALTERAÇÕES</button>
             </div>
-        </div>
+        </form>
     </main>
-    
 </body>
 </html>
 <style>
     .posterFilme>img {
         aspect-ratio: 2/3;
-
     }
-
-
 </style>

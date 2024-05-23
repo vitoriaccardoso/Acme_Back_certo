@@ -6,7 +6,7 @@ export async function getFilmes() {
     return data.filmes;
 }
 
-export async function getFilmeId(id_filme) {
+export async function getFilmesId(id_filme) {
     const url = `http://localhost:8080/v2/acmefilmes/filme/${id_filme}`;
     const response = await fetch(url);
     const data = await response.json();
@@ -45,12 +45,15 @@ export async function deleteFilme(id_filme) {
             method: 'DELETE',
         });
         if (!response.ok) {
-            throw new Error('Erro ao excluir filme');
+            const errorMessage = await response.text(); 
+            throw new Error(`Erro ao excluir filme: ${errorMessage}`);
         }
     } catch (error) {
+        console.error('Erro na solicitação para excluir filme:', error);
         throw new Error(error.message);
     }
 }
+
 
 
 export async function selectNameFilmes(name) {

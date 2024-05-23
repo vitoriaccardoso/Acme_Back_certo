@@ -1,5 +1,5 @@
 'use strict'
-import {getFilmes, postFilme, selectNameFilmes, getFilmeId} from "./filmes.js"
+import {getFilmes, selectNameFilmes, getFilmesId} from "./filmes.js"
 
 console.table(await getFilmes())
 
@@ -71,6 +71,31 @@ function criarCard (filme){
     })
 }
 
+// async function preencherContainer(){
+//     const container = document.querySelector('body')
+
+//     const filmes = await getFilmes()
+
+//     filmes.forEach(filme => {
+//         criarCard(filme)
+//     })
+// }
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteButton = document.getElementById('deleteButton');
+    if (deleteButton) {
+        deleteButton.addEventListener('click', async () => {
+            try {
+                await deleteFilme(id_filme);
+                window.location.href = './dashboard.html';
+            } catch (error) {
+                console.error('Erro ao excluir filme:', error);
+            }
+        });
+    } else {
+        console.error('Element with id "deleteButton" not found.');
+    }
+});
+
 async function preencherContainer(){
     const container = document.querySelector('body')
 
@@ -80,52 +105,6 @@ async function preencherContainer(){
         criarCard(filme)
     })
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const deleteButton = document.getElementById('deleteButton');
-    deleteButton.addEventListener('click', async () => {
-        try {
-            await deleteFilme(id_filme);
-            window.location.href = './dashboard.html';
-        } catch (error) {
-            console.error('Erro ao excluir filme:', error);
-        }
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const formAdicionarFilme = document.getElementById('form_adicionar_filme');
-    
-    formAdicionarFilme.addEventListener('submit', async (event) => {
-        event.preventDefault(); 
-        
-        const formData = new FormData(formAdicionarFilme);
-        const filme = {
-            nome: formData.get('nome'),
-            sinopse: formData.get('sinopse'),
-            duracao: formData.get('duracao'),
-            lancamento: formData.get('lançamento'),
-            relancamento: formData.get('relançamento'),
-            valor: formData.get('valor')
-        };
-
-        try {
-            const filmeAdicionado = await postFilme(filme);
-
-            if (filmeAdicionado) {
-                alert('Filme adicionado com sucesso!');
-                formAdicionarFilme.reset(); 
-            } else {
-                throw new Error('Erro ao adicionar filme');
-            }
-
-        } catch (error) {
-            console.error('Erro ao adicionar filme:', error);
-            alert('Erro ao adicionar filme. Verifique o console para mais detalhes.');
-        }
-    });
-});
 
 
 

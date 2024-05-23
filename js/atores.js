@@ -3,14 +3,14 @@ export async function getAtores() {
     const url = 'http://localhost:8080/v3/acmefilmes/atores';
     const response = await fetch(url);
     const data = await response.json();
-    return data.filmes;
+    return data.ator;
 }
 
 export async function getAtoresId(id_ator) {
     const url = `http://localhost:8080/v3/acmefilmes/atores/${id_ator}`;
     const response = await fetch(url);
     const data = await response.json();
-    return data.filme[0];
+    return data.ator[0];
 }
 
 export async function postAtor(ator) {
@@ -44,9 +44,9 @@ export async function deleteFilme(id_ator){
         await fetch(`http://localhost:8080/v3/acmeFilmes/atores/${id_ator}`,{
             method: 'DELETE'
         })
-        console.log("Filme excluído com sucesso")
+        console.log("ator excluído com sucesso")
     } catch (error){
-        console.error('Erro ao excluir filme: ',error);
+        console.error('Erro ao excluir ator: ',error);
     }
 }
 

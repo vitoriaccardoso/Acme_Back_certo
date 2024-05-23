@@ -8,7 +8,7 @@ function criarFilme(info){
     filme.classList.add('h-20','border-b-4','border-[#141fc0]', 'grid', 'grid-cols-4', 'place-items-center')
     const id = document.createElement('h1')
     id.classList.add('text-[#141fc0]','text-3xl')
-    id.textContent=info.id
+    id.textContent=info.id_filme
     const produto = document.createElement('p')
     produto.textContent=info.nome
     produto.classList.add('text-[#141fc0]','text-3xl')
@@ -27,7 +27,7 @@ function criarFilme(info){
     container.appendChild(filme)
 
     iconeEditar.addEventListener('click',()=>{
-        window.location.href='../editar.html?id='+info.id
+        window.location.href='../editar.html?id='+info.id_filme
     })
     iconeDeletar.addEventListener('click', async () => {
       deleteFilme(info.id_filme)
@@ -35,17 +35,24 @@ function criarFilme(info){
     })
 }
 
-const add = document.getElementById('add')
+const add = document.getElementById('add');
 
-add.addEventListener('click', ()=>{
-    window.location.href = '../cadastro.html'
-})
+add.addEventListener('click', () => {
+    window.location.href = '../cadastro.html';
+});
 
 listaFilme.forEach(filme => {
-    criarFilme(filme)
+    criarFilme(filme);
 });
+
 const iconeAdicionar = document.getElementById('iconeAdicionar');
 
-iconeAdicionar.addEventListener('click', () => {
-    window.location.href = '../html/pagina_de_adicionar_filme.html';
-});
+if (iconeAdicionar) {
+    iconeAdicionar.addEventListener('click', () => {
+        window.location.href = '../html/adicionar_filme.html';
+    });
+} else {
+    console.error('Elemento com ID "iconeAdicionar" não encontrado.');
+}
+
+
